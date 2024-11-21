@@ -14,6 +14,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    padding: 20px;
 }
 
 /* Estilos do conteúdo principal */
@@ -22,49 +23,77 @@ main {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    padding: 20px;
 }
 
+/* Container para os flashcards */
 #container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Estilos para cada cartão */
+.cartao {
+    width: 100%;
+    max-width: 250px;
+    perspective: 1000px; /* Cria o efeito de profundidade para o flip */
+}
+
+/* Conteúdo do cartão */
+.cartao__conteudo {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s; /* Animação suave */
+}
+
+/* Efeito de flip ao passar o mouse */
+.cartao:hover .cartao__conteudo {
+    transform: rotateY(180deg); /* Virar o cartão */
+}
+
+/* Frente do cartão */
+.cartao__frente, .cartao__verso {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden; /* Oculta a parte de trás durante o flip */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.cartao {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 100%;
-    max-width: 400px;
-    transition: transform 0.3s ease;
-}
-
-.cartao:hover {
-    transform: scale(1.05);
-}
-
-.cartao__conteudo {
     padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos da frente do cartão */
+.cartao__frente {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.cartao__frente h3 {
+    font-size: 1.2rem;
     text-align: center;
 }
 
-.cartao__conteudo h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #007bff;
+/* Estilos do verso do cartão */
+.cartao__verso {
+    background-color: #f7f7f7;
+    color: #333;
+    transform: rotateY(180deg); /* Coloca o verso atrás da frente inicialmente */
+    padding: 10px;
 }
 
-.cartao__conteudo__pergunta p,
-.cartao__conteudo__resposta p {
+.cartao__verso p {
     font-size: 1rem;
+    text-align: center;
     line-height: 1.5;
-    color: #555;
-}
-
-.cartao__conteudo__resposta {
-    margin-top: 20px;
 }
 
 /* Rodapé */
@@ -76,14 +105,10 @@ footer {
     font-size: 0.8rem;
 }
 
-/* Estilos Responsivos */
+/* Responsividade */
 @media (max-width: 600px) {
-    .cartao__conteudo h3 {
-        font-size: 1.2rem;
-    }
-    
-    .cartao__conteudo__pergunta p,
-    .cartao__conteudo__resposta p {
-        font-size: 0.9rem;
+    .cartao__frente h3,
+    .cartao__verso p {
+        font-size: 1rem;
     }
 }
