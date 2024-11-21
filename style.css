@@ -1,0 +1,89 @@
+/* Resetando margens e paddings padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+/* Estilos do conteúdo principal */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartao {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.cartao:hover {
+    transform: scale(1.05);
+}
+
+.cartao__conteudo {
+    padding: 20px;
+    text-align: center;
+}
+
+.cartao__conteudo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.cartao__conteudo__pergunta p,
+.cartao__conteudo__resposta p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.cartao__conteudo__resposta {
+    margin-top: 20px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 600px) {
+    .cartao__conteudo h3 {
+        font-size: 1.2rem;
+    }
+    
+    .cartao__conteudo__pergunta p,
+    .cartao__conteudo__resposta p {
+        font-size: 0.9rem;
+    }
+}
