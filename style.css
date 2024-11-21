@@ -8,8 +8,8 @@
 /* Corpo da página */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #8x7x6x;
+    color: #998;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -73,8 +73,8 @@ main {
 
 /* Estilos da frente do cartão */
 .cartao__frente {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #5x4x3x;
+    color: #997;
 }
 
 .cartao__frente h3 {
@@ -84,10 +84,10 @@ main {
 
 /* Estilos do verso do cartão */
 .cartao__verso {
-    background-color: #f7f7f7;
-    color: #333;
+    background-color: #x9x8x7;
+    color: #996;
     transform: rotateY(180deg); /* Coloca o verso atrás da frente inicialmente */
-    padding: 10px;
+    padding: 12px;
 }
 
 .cartao__verso p {
@@ -98,8 +98,8 @@ main {
 
 /* Rodapé */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #995;
+    color: #www;
     text-align: center;
     padding: 10px 20px;
     font-size: 0.8rem;
